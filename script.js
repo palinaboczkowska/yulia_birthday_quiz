@@ -13,22 +13,22 @@
 const FINAL_PHRASE = "SWEDISH HOUSE MAFIA";
 
 const questions = [
-  { word: "_TEPAN NIKOLAEVICH", answer: "S", imageUrl: "images/1.JPG" },
+  { word: "_TEPAN NIKOLAEVICH", answer: "S", imageUrl: "images/1.jpg" },
   { word: "_E",                 answer: "W", imageUrl: "images/2.png" },
-  { word: "AP_ROL",             answer: "E", imageUrl: "images/3.JPG" },
-  { word: "GOSPOD' GOSPO_'",    answer: "D", imageUrl: "images/4.JPG" },
+  { word: "AP_ROL",             answer: "E", imageUrl: "images/3.jpg" },
+  { word: "GOSPOD' GOSPO_'",    answer: "D", imageUrl: "images/4.jpg" },
   { word: "YUL_A",              answer: "I", imageUrl: "images/5.JPG" },
   { word: "SA_HKA",             answer: "S", imageUrl: "images/6.jpg" },
   { word: "POISKU_I",           answer: "H", imageUrl: "images/7.jpg" },
   { word: "BUHLO_OD",           answer: "H", imageUrl: "images/8.JPG" },
   { word: "GOG_L'",             answer: "O", imageUrl: "images/9.jpg" },
-  { word: "EXC_SE ME",          answer: "U", imageUrl: "images/10.JPG" },
+  { word: "EXC_SE ME",          answer: "U", imageUrl: "images/10.jpg" },
   { word: "B_NSON",             answer: "E", imageUrl: "images/11.JPG" },
-  { word: "MAL_Ö",              answer: "M", imageUrl: "images/12.JPG" },
+  { word: "MAL_Ö",              answer: "M", imageUrl: "images/12.jpg" },
   { word: "PALINK_",            answer: "A", imageUrl: "images/13.JPG" },
   { word: "YUL'KIN _ORUM",      answer: "F", imageUrl: "images/14.png" },
   { word: "CHA_KA",             answer: "I", imageUrl: "images/15.JPG" },
-  { word: "P_TRUL'",            answer: "A", imageUrl: "images/16.JPG" },
+  { word: "P_TRUL'",            answer: "A", imageUrl: "images/16.jpg" },
 ];
 
 // ─────────────────────────────────────────────────────────

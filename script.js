@@ -135,17 +135,20 @@ function renderSlide(idx) {
 const SLIDE_HINT = "What's the missing letter?";
 
 function buildSlideHTML(q) {
-  // Build word character-by-character; _ becomes an <input>
-  const wordHTML = q.word.split("").map(ch => {
-    if (ch === "_") {
-      return `<div class="letter-block">
-                <input class="letter-input" type="text" maxlength="1"
-                  autocomplete="off" autocorrect="off"
-                  autocapitalize="characters" spellcheck="false"
-                  inputmode="text" aria-label="Missing letter">
-              </div>`;
-    }
-    return `<div class="letter-block"><span class="letter-char">${ch}</span></div>`;
+  // Group letters by word so each word wraps as a unit on mobile
+  const wordHTML = q.word.split(" ").map(token => {
+    const lettersHTML = token.split("").map(ch => {
+      if (ch === "_") {
+        return `<div class="letter-block">
+                  <input class="letter-input" type="text" maxlength="1"
+                    autocomplete="off" autocorrect="off"
+                    autocapitalize="characters" spellcheck="false"
+                    inputmode="text" aria-label="Missing letter">
+                </div>`;
+      }
+      return `<div class="letter-block"><span class="letter-char">${ch}</span></div>`;
+    }).join("");
+    return `<div class="word-group">${lettersHTML}</div>`;
   }).join("");
 
   return `

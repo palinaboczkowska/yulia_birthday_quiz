@@ -318,6 +318,12 @@ html, body {
   flex-wrap: wrap;
 }
 
+.word-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+}
+
 .letter-block {
   display: flex;
   flex-direction: column;

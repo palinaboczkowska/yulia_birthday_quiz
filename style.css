@@ -738,8 +738,8 @@ html, body {
     width: clamp(1.9rem, 7.5vw, 2.8rem);
   }
 
-  /* Compact intro on small screens */
-  .intro-content { padding: 1.5rem 1.2rem; }
+  /* Push intro text below the photo */
+  .intro-content { padding: 1.5rem 1.2rem; margin-top: 52vw; }
 
   /* Suspense button stays visible above safe-area */
   .suspense-content { padding-bottom: max(3rem, env(safe-area-inset-bottom, 3rem) + 1.5rem); }

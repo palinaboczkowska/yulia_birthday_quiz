@@ -692,6 +692,13 @@ html, body {
 
 /* ─── Mobile: stacked layout so photos aren't cropped ──── */
 @media (max-width: 600px) {
+  /* Intro background — show full photo without cropping */
+  #intro-screen::before {
+    background-size: contain;
+    background-position: center top;
+    opacity: 0.35;
+  }
+
   /* Photo takes top portion; natural height, no cropping */
   .slide-image {
     position: relative;

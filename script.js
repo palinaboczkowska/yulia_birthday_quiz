@@ -49,7 +49,6 @@ const startBtn      = document.getElementById("start-btn");
 const slideArea     = document.getElementById("slide-area");
 const progressFill  = document.getElementById("progress-fill");
 const progressLabel = document.getElementById("progress-label");
-const letterSlots   = document.getElementById("letter-slots");
 const restartBtn    = document.getElementById("restart-btn");
 const soundBtn      = document.getElementById("sound-btn");
 const canvas        = document.getElementById("confetti-canvas");
@@ -65,7 +64,6 @@ let animRAF   = null;
 //  INIT
 // ─────────────────────────────────────────────────────────
 function init() {
-  buildLetterSlots();
   resizeCanvas();
 
   startBtn.addEventListener("click", startQuiz);
@@ -94,35 +92,6 @@ function startQuiz() {
   renderSlide(0);
 }
 
-// ─────────────────────────────────────────────────────────
-//  LETTER SLOTS (bottom strip)
-//  Slots show the letters of FINAL_PHRASE (hidden until answered)
-// ─────────────────────────────────────────────────────────
-function buildLetterSlots() {
-  letterSlots.innerHTML = "";
-  let letterIdx = 0;
-
-  // Render slots with visual word-breaks
-  FINAL_PHRASE.split("").forEach(ch => {
-    if (ch === " ") {
-      const spacer = document.createElement("div");
-      spacer.className = "slot-spacer";
-      letterSlots.appendChild(spacer);
-      return;
-    }
-    const slot = document.createElement("div");
-    slot.className = "slot";
-    slot.id = `slot-${letterIdx}`;
-    slot.textContent = ch;  // colour is transparent; reveals on .filled
-    letterSlots.appendChild(slot);
-    letterIdx++;
-  });
-}
-
-function fillSlot(idx) {
-  const el = document.getElementById(`slot-${idx}`);
-  if (el) el.classList.add("filled");
-}
 
 // ─────────────────────────────────────────────────────────
 //  SLIDE RENDERING
@@ -228,8 +197,6 @@ function handleGuess(val, answer, input, nextBtn) {
 //  SLIDE ADVANCE
 // ─────────────────────────────────────────────────────────
 function advanceSlide(card, idx) {
-  fillSlot(idx);
-
   // Exit animation
   card.classList.remove("active");
   card.classList.add("exiting");

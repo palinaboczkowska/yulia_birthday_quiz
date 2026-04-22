@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Shared canvas for confetti + fireworks -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 1 · Intro
+  ═══════════════════════════════════════════ -->
+  <section id="intro-screen" class="screen active">
+    <div class="intro-content">
+      <p class="intro-sub">BUREAU POISKUHI PRESENTS</p>
+      <br>
+      <br>
+      <br>
+      <h1 class="intro-title">Your Birthday Quest Starts Now</h1>
+      <p class="intro-desc">
+        You'll see a series of images.
+        Every image contains a word with a missing letter.
+        All those letters together will reveal your surprise at the end!
+      </p>
+      <button id="start-btn" class="btn btn-primary">
+        Let's Go <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 2 · Quiz
+  ═══════════════════════════════════════════ -->
+  <section id="quiz-screen" class="screen">
+
+    <!-- Top progress bar -->
+    <header class="quiz-header">
+      <div class="progress-track">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div class="quiz-header-row">
+        <span id="progress-label" class="progress-label">Step 1 of 17</span>
+        <button id="sound-btn" class="btn btn-icon">♪</button>
+      </div>
+    </header>
+
+    <!-- Slide cards are injected here -->
+    <div id="slide-area" class="slide-area"></div>
+
+    <!-- Collected letters strip -->
+    <footer class="letters-footer">
+      <span class="letters-label">Collected letters:</span>
+      <div id="letter-slots" class="letter-slots"></div>
+    </footer>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 2.5 · Suspense
+  ═══════════════════════════════════════════ -->
+  <section id="suspense-screen" class="screen">
+    <div class="suspense-image"></div>
+    <div class="suspense-overlay"></div>
+    <div class="suspense-content">
+      <p class="suspense-label">Your surprise is waiting…</p>
+      <h2 class="suspense-title">Ready?</h2>
+      <button id="suspense-btn" class="btn btn-primary">
+        Show me <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SCREEN 3 · Reveal
+  ═══════════════════════════════════════════ -->
+  <section id="reveal-screen" class="screen">
+
+    <!-- Layer 1: typewriter text + zoom out -->
+    <div class="reveal-stage" id="reveal-stage">
+      <p class="reveal-typing">
+        <span id="reveal-typed"></span><span class="reveal-cursor" id="reveal-cursor"></span>
+      </p>
+    </div>
+
+    <!-- Layer 2: concert poster — appears after the zoom -->
+    <div class="reveal-after">
+
+      <p id="reveal-artist" class="reveal-artist">SWEDISH HOUSE MAFIA CONCERT</p>
+
+      <div id="reveal-divider-line" class="reveal-divider-line"></div>
+
+      <p id="reveal-date" class="reveal-date">August 28 · Gothenburg</p>
+
+      <p id="reveal-tagline" class="reveal-tagline">
+        We're going to see them <strong>liiiiiiive</strong>
+      </p>
+
+      <button id="restart-btn" class="btn btn-secondary">Play Again</button>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
